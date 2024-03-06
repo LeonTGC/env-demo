@@ -2,7 +2,8 @@ import { useState, useEffect } from "react"
 import './main.css'
 const App = () => {
   const [data, setData] = useState("")
-
+  const [error, setError] = useState({ error: false, message: '' })
+  
   const fetchData = async () => {
     let nasa = await fetch(
       `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}`
