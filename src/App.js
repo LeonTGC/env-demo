@@ -2,7 +2,9 @@ import { useState, useEffect } from "react"
 import './main.css'
 const App = () => {
   const [data, setData] = useState("")
+  const [error, setError] = useState({ error: false, message: '' })
   const [clicked, setClicked] = useState(false)
+
   
   const fetchData = async () => {
     let nasa = await fetch(
